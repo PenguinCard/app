@@ -1,3 +1,5 @@
+/dist/*.woff*
+/dist/*.html
 /.idea
 /node_modules
 package-lock.json
