@@ -6,8 +6,12 @@ import * as ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 // bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min';
+import '@popperjs/core'
+import 'bootstrap/dist/js/bootstrap.js'
+import 'bootstrap/dist/css/bootstrap.css';
+
+// bootstrap icon
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 // component
 import App from './App';
