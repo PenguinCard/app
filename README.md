@@ -125,6 +125,18 @@ const webpackConfig = {
 module.exports = webpackConfig
 ```
 
-###source
+### Execute Webpack
+```shell
+npx webpack
+```
+
+### Execute webpack-dev-server
+```shell
+npx webpack-dev-server
+```
+
+<br>
+
+### source
 - https://webpack.kr/guides/typescript/
 
