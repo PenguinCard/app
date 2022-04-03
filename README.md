@@ -22,7 +22,7 @@
 > 
 > ##### dev-server
 > ```shell
-> npm i -D webpack-dev-server<br>
+> npm i -D webpack-dev-server
 > npm i -D html-webpack-plugin
 > ```
 #### npm install
