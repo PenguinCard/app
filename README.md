@@ -35,7 +35,7 @@
 > 
 > ##### for react
 > ```shell 
-> npm i @types/react 
+> npm i react 
 > npm i @types/react-dom
 > ```
 > 

@@ -18,7 +18,7 @@ function App () {
                     <Navbar/>
                 </div>
             </div>
-            <div className="row">
+            <div className="row container pt-15">
                 <div className="col">
                     <button type="button" className="btn btn-dark" onClick={() => dispatch(increment())}>INCREASE</button>
                 </div>
