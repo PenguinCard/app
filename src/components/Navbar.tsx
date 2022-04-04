@@ -25,13 +25,13 @@ function Navbar() {
                                 <Link className="nav-link" to="link ">Link</Link>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                <a className="nav-link dropdown-toggle" id="offcanvasNavbarDropdown"
                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown
                                 </a>
                                 <ul className="dropdown-menu bg-dark" aria-labelledby="offcanvasNavbarDropdown">
-                                    <li><a className="dropdown-item text-white" href="#">Action</a></li>
-                                    <li><a className="dropdown-item text-white" href="#">Another action</a></li>
+                                    <li><Link to="dropdown/action" className="dropdown-item text-white">Action</Link></li>
+                                    <li><Link to="dropdown/anohteraction" className="dropdown-item text-white">Another action</Link></li>
                                     <li>
                                         <hr className="dropdown-divider bg-white"/>
                                     </li>
