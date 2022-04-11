@@ -8,11 +8,14 @@
 }
 
 .loginFormStyle {
+    padding: 2%;
     vertical-align: middle;
     min-width: 300px;
-    min-height: 200px;
+    min-height: 400px;
     width: 30%;
-    height: 40%;
-    background: aquamarine;
+    height: 45%;
+    background: whitesmoke;
     z-index: 9999;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(128, 128, 128, 0.5);
 }
