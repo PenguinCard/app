@@ -7,7 +7,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from './redux/reducer/counter';
 
 import Navbar from './components/Navbar'
-import { useState } from "react";
+import LoginForm from './components/LoginForm'
+import { useState, useEffect } from "react";
+
+import './css/App.css'
 
 interface User {
     user_id: string,
@@ -22,44 +25,45 @@ function App () {
     const dispatch = useDispatch()
     const navigate = useNavigate();
 
-    const count = useSelector<RootState>(state => state.counter.value);
+    const count = useSelector<RootState>(state => state.counter.value) as number;
     const user = useSelector<RootState>(state => state.user) as User
 
-    if(user?.user_id) navigate("/")
-    else navigate("/login")
+    useEffect(() => {
+        if (!user || !user.access_token){ navigate("/login") }
+        },[user.access_token])
 
     return (
         <div className="vh-100">
-            {user?.user_id &&
+            {user?.access_token &&
                 <div className="row pb-5">
                     <div className="col">
                         <Navbar/>
                     </div>
                 </div>
             }
-            <div className="row container pt-2">
-                <Routes>
-                    <Route path="/login" element={<h1>LOGIN</h1>}/>
-                    <Route path="/home" element={<h1>HOME</h1>}/>
-                    <Route path="dropdown">
-                        <Route path="action" element={<h1>action</h1>}/>
-                    </Route>
-                    <Route path="/" element={<h1>test</h1>}/>
-                    <Route element={<h1>NotFound</h1>}/>
-                </Routes>
-                <div className="col">
-                    <button type="button" className="btn btn-dark" onClick={() => dispatch(increment())}>INCREASE</button>
-                </div>
-                <div className="col">
-                    <button type="button" className="btn btn-dark" onClick={() => dispatch(decrement())}>DECREASE</button>
-                </div>
-                <div className="col">
-                    { count }
-                </div>
-                <div>
-                    { JSON.stringify(user) }
-                </div>
-            </div>
+            <Routes>
+                <Route path="/login" element={<LoginForm />}/>
+                <Route path="/home" element={<h1>HOME</h1>}/>
+                <Route path="dropdown">
+                    <Route path="action" element={<h1>action</h1>}/>
+                </Route>
+                <Route path="/" element={
+                    <div className="row container pt-2">
+                        <div className="col">
+                            <button type="button" className="btn btn-dark" onClick={() => dispatch(increment())}>INCREASE</button>
+                        </div>
+                        <div className="col">
+                            <button type="button" className="btn btn-dark" onClick={() => dispatch(decrement())}>DECREASE</button>
+                        </div>
+                        <div className="col">
+                            {count}
+                        </div>
+                        <div>
+                            { JSON.stringify(user) }
+                        </div>
+                    </div>
+                }/>
+            </Routes>
         </div>
     )
 }
