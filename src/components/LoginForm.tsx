@@ -1,6 +1,12 @@
 import * as React from 'react';
 
+import { useState } from "react";
+
 function LoginForm() {
+
+    const [userID, setUserID] = useState<string>('')
+    const [userPW, setUserPW] = useState<string>('')
+
     return (
         <div className="loginBackGround">
             <div className="loginFormStyle">
@@ -17,26 +23,47 @@ function LoginForm() {
                                    id="floatingInput"
                                    placeholder="name@example.com"
                                    style={{ height: "60px"}}
+                                   value={userID}
+                                   onChange={e => setUserID(e.currentTarget.value)}
                             />
                             <label htmlFor="floatingInput">Email address</label>
                         </div>
                     </div>
                 </div>
-                <div className="row" style={{ margin: "10px 0"}}>
+                <div className="row" style={{ margin: "10px 0 4px"}}>
                     <div className="col">
                         <div className="form-floating mb-3">
                             <input type="password"
                                    className="form-control"
                                    id="floatingPassword"
                                    placeholder="Password"
-                                   style={{ height: "60px"}}/>
-                                <label htmlFor="floatingPassword">Password</label>
+                                   style={{ height: "60px"}}
+                                   value={userPW}
+                                   onChange={e => setUserPW(e.currentTarget.value)}
+                            />
+                            <label htmlFor="floatingPassword">Password</label>
+                            <div className="row">
+                                <div className="col">
+                                    <span className="float-start" style={{ "width": "145px"}}>
+                                        <small>
+                                            <i className="bi bi-lock"></i>&nbsp;Forgot Password?
+                                        </small>
+                                    </span>
+                                </div>
+                                <div className="col">
+                                    <span style={{ "width": "80px"}}>
+                                        <small>
+                                            <i className="bi bi-door-open"></i>Sign Up
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className="row" style={{ margin: "10px 0"}}>
+                <div className="row" style={{ margin: "2px 0"}}>
                     <div className="col">
-                        <button type="button" className="btn btn-dark mb-3" style={{ width: "100%", height: "60px" }}>LOGIN</button>
+                        <button type="button" className="btn btn-dark mb-3 w-100" style={{ height: "60px" }}>LOGIN</button>
                     </div>
                 </div>
             </div>
