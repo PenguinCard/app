@@ -12,7 +12,7 @@ function LoginForm() {
             <div className="loginFormStyle">
                 <div className="row" style={{ margin: "10px 0"}}>
                     <div className="col">
-                        <h2 style={{ textAlign: "center"}}>LOGIN</h2>
+                        <h2 className="text-center">LOGIN</h2>
                     </div>
                 </div>
                 <div className="row" style={{ margin: "10px 0"}}>
@@ -44,14 +44,14 @@ function LoginForm() {
                             <label htmlFor="floatingPassword">Password</label>
                             <div className="row">
                                 <div className="col">
-                                    <span className="float-start" style={{ "width": "145px"}}>
+                                    <span className="text-center forgot-password">
                                         <small>
-                                            <i className="bi bi-lock"></i>&nbsp;Forgot Password?
+                                            &nbsp;Forgot&nbsp;Password?
                                         </small>
                                     </span>
                                 </div>
                                 <div className="col">
-                                    <span style={{ "width": "80px"}}>
+                                    <span className="text-center">
                                         <small>
                                             <i className="bi bi-door-open"></i>Sign Up
                                         </small>
