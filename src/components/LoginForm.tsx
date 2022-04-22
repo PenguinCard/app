@@ -1,11 +1,25 @@
 import * as React from 'react';
 
+import * as bcrypt from 'bcryptjs'
+import axios from 'axios'
+
 import { useState } from "react";
 
 function LoginForm() {
 
     const [userID, setUserID] = useState<string>('')
     const [userPW, setUserPW] = useState<string>('')
+
+    async function login() {
+
+        console.log(Math.random());
+        const salt:string = bcrypt.genSaltSync(10)
+
+        await axios.post('/api/login', {
+            username: userID,
+            password: bcrypt.hashSync(userPW, salt)
+        })
+    }
 
     return (
         <div className="loginBackGround">
@@ -63,7 +77,10 @@ function LoginForm() {
                 </div>
                 <div className="row" style={{ margin: "2px 0"}}>
                     <div className="col">
-                        <button type="button" className="btn btn-dark mb-3 w-100" style={{ height: "60px" }}>LOGIN</button>
+                        <button type="button"
+                                className="btn btn-dark mb-3 w-100"
+                                onClick={login}
+                                style={{ height: "60px" }}>LOGIN</button>
                     </div>
                 </div>
             </div>

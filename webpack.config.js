@@ -21,7 +21,8 @@ const webpackConfig = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         fallback: {
-            fs: false
+            fs: false,
+            crypto: false
         }
     },
     output: {
